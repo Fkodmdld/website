@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="km">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Payment</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/payment.css">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Poppins:wght@300;400;500;600;700&family=Noto+Sans+Khmer:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- Confetti Effect -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="images/channan.jpg" type="image/x-icon">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- PayPal SDK -->
+    <script src="https://www.paypal.com/sdk/js?client-id=sb&currency=USD"></script>
+</head>
+
+<body>
+
+    <header class="header">
+        <button onclick="history.back()">←</button>
+        <h3>Payment</h3>
+    </header>
+
+    <!-- Amount -->
+    <div class="amount">
+        <p>ចំនួនទឹកប្រាក់ត្រូវបង់</p>
+        <h2>$<span id="payTotal">2.78</span></h2>
+    </div>
+
+    <button class="checkout-btn aba-btn" onclick="payWithABA()">
+                <i class="fas fa-qrcode"></i> ទូទាត់តាម ABA KHQR
+            </button>
+    <button class="checkout-btn acleda-btn" onclick="payWithKBPRASAC()">
+                <i class="fas fa-university"></i> ទូទាត់តាម KB PRASAC
+            </button>
+    <button class="checkout-btn paypal-btn" onclick="payWithPAYPAL()">
+                <i class="fab fa-cc-paypal"></i> ទូទាត់តាម PAYPAL
+            </button>
+
+    <!-- Payment Methods -->
+
+    <div class="methods">
+
+        <label class="method">
+    <input type="radio" name="pay" onclick="selectPay('ACLEDA')">
+    <img src="image/images.Q&R ACLEDA.jpg">
+    <div>
+      <b>ACLEDA</b>
+      <small>ACLEDA Mobile</small>
+    </div>
+  </label>
+
+        <label class="method">
+    <input type="radio" name="pay" onclick="selectPay('ABA')">
+    <img src="image/images.Q&R ABA.jpg">
+    <div>
+      <b>ABA Pay</b>
+      <small>ABA Mobile</small>
+    </div>
+  </label>
+
+        <label class="method">
+    <input type="radio" name="pay" onclick="selectPay('FTB')">
+    <img src="image/images.Q&R FTB.jpg">
+    <div>
+      <b>FTB Mobile</b>
+      <small>FTB Bank</small>
+    </div>
+  </label>
+
+
+        <label class="method">
+    <input type="radio" name="pay" onclick="selectPay('cash')">
+    <span class="icon">💵</span>
+    <div>
+      <b>Cash on Delivery</b>
+      <small>បង់ប្រាក់ពេលទទួលទំនិញ</small>
+    </div>
+  </label>
+
+    </div>
+
+    <!-- QR -->
+    <div id="qrBox" class="qr hidden">
+        <h4>Scan to Pay</h4>
+        <img id="qrImg">
+    </div>
+
+    <button class="pay-btn" onclick="confirmPay()">Confirm Payment</button>
+
+    <script src="js/payment.js"></script>
+</body>
+
+</html>
