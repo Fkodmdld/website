@@ -1,0 +1,40 @@
+body{
+  margin:0;
+  font-family: Arial, sans-serif;
+  background:#f4f6f8;
+}
+
+.account-box{
+  width:360px;
+  margin:90px auto;
+  background:#fff;
+  padding:25px;
+  border-radius:12px;
+  box-shadow:0 6px 15px rgba(0,0,0,0.12);
+}
+
+.account-box h2{
+  text-align:center;
+  margin-bottom:20px;
+}
+
+.account-box p{
+  font-size:16px;
+  margin:10px 0;
+}
+
+.logout{
+  width:100%;
+  padding:12px;
+  margin-top:15px;
+  border:none;
+  border-radius:8px;
+  background:#e53935;
+  color:#fff;
+  font-size:16px;
+  cursor:pointer;
+}
+
+.logout:hover{
+  background:#c62828;
+}
